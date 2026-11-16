@@ -1,0 +1,409 @@
+{
+  "gpu": "Tesla T4",
+  "torch": "2.14.1+cu130",
+  "triton": "3.8.0",
+  "correctness": "PASS (if all notebook assertions completed)",
+  "tests": [
+    {
+      "label": "random FP16",
+      "shape": [
+        1,
+        128
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.08975249528884888,
+      "max_error": 0.177734375,
+      "mse": 0.010819949209690094,
+      "independent_q_mismatches": 0,
+      "compression": 3.764705882352941,
+      "method": "two_pass"
+    },
+    {
+      "label": "random FP16",
+      "shape": [
+        13,
+        256
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.1045738011598587,
+      "max_error": 0.2615094780921936,
+      "mse": 0.015003138221800327,
+      "independent_q_mismatches": 2,
+      "compression": 3.878787878787879,
+      "method": "two_pass"
+    },
+    {
+      "label": "random FP16",
+      "shape": [
+        2048,
+        2048
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.12959694862365723,
+      "max_error": 0.38030123710632324,
+      "mse": 0.022577041760087013,
+      "independent_q_mismatches": 672,
+      "compression": 3.9844357976653697,
+      "method": "two_pass"
+    },
+    {
+      "label": "random FP16",
+      "shape": [
+        8192,
+        2048
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.12975339591503143,
+      "max_error": 0.3843470811843872,
+      "mse": 0.02262992039322853,
+      "independent_q_mismatches": 2480,
+      "compression": 3.9844357976653697,
+      "method": "two_pass"
+    },
+    {
+      "label": "random BF16",
+      "shape": [
+        32,
+        256
+      ],
+      "dtype": "torch.bfloat16",
+      "mismatches": 0,
+      "mae": 0.11268264800310135,
+      "max_error": 0.3005022406578064,
+      "mse": 0.017154574394226074,
+      "independent_q_mismatches": 20,
+      "compression": 3.878787878787879,
+      "method": "two_pass"
+    },
+    {
+      "label": "all zero",
+      "shape": [
+        3,
+        128
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.0,
+      "max_error": 0.0,
+      "mse": 0.0,
+      "independent_q_mismatches": 0,
+      "compression": 3.764705882352941,
+      "method": "two_pass"
+    },
+    {
+      "label": "mixed zero rows",
+      "shape": [
+        5,
+        256
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.06591919809579849,
+      "max_error": 0.2493024468421936,
+      "mse": 0.009913593530654907,
+      "independent_q_mismatches": 0,
+      "compression": 3.878787878787879,
+      "method": "two_pass"
+    },
+    {
+      "label": "small example",
+      "shape": [
+        4,
+        8
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.0714285671710968,
+      "max_error": 0.5714287757873535,
+      "mse": 0.02806122973561287,
+      "independent_q_mismatches": 1,
+      "compression": 2.0,
+      "method": "two_pass"
+    },
+    {
+      "label": "threshold ties",
+      "shape": [
+        1,
+        16
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.4375,
+      "max_error": 0.5,
+      "mse": 0.21875,
+      "independent_q_mismatches": 0,
+      "compression": 2.6666666666666665,
+      "method": "two_pass"
+    },
+    {
+      "label": "edge torch.float16",
+      "shape": [
+        1,
+        2
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.048095703125,
+      "max_error": 0.09619140625,
+      "mse": 0.0046263933181762695,
+      "independent_q_mismatches": 0,
+      "compression": 0.8,
+      "method": "two_pass"
+    },
+    {
+      "label": "edge torch.bfloat16",
+      "shape": [
+        1,
+        2
+      ],
+      "dtype": "torch.bfloat16",
+      "mismatches": 0,
+      "mae": 0.0018833726644515991,
+      "max_error": 0.0037667453289031982,
+      "mse": 7.094185093592387e-06,
+      "independent_q_mismatches": 0,
+      "compression": 0.8,
+      "method": "two_pass"
+    },
+    {
+      "label": "edge torch.float16",
+      "shape": [
+        3,
+        6
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.0654233917593956,
+      "max_error": 0.1514369249343872,
+      "mse": 0.006821407470852137,
+      "independent_q_mismatches": 0,
+      "compression": 1.7142857142857142,
+      "method": "two_pass"
+    },
+    {
+      "label": "edge torch.bfloat16",
+      "shape": [
+        3,
+        6
+      ],
+      "dtype": "torch.bfloat16",
+      "mismatches": 0,
+      "mae": 0.0639183446764946,
+      "max_error": 0.1305803656578064,
+      "mse": 0.00587250804528594,
+      "independent_q_mismatches": 0,
+      "compression": 1.7142857142857142,
+      "method": "two_pass"
+    },
+    {
+      "label": "edge torch.float16",
+      "shape": [
+        7,
+        130
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.09933007508516312,
+      "max_error": 0.2265625,
+      "mse": 0.013415463268756866,
+      "independent_q_mismatches": 0,
+      "compression": 3.7681159420289854,
+      "method": "two_pass"
+    },
+    {
+      "label": "edge torch.bfloat16",
+      "shape": [
+        7,
+        130
+      ],
+      "dtype": "torch.bfloat16",
+      "mismatches": 0,
+      "mae": 0.09616725146770477,
+      "max_error": 0.2421875,
+      "mse": 0.012852335348725319,
+      "independent_q_mismatches": 3,
+      "compression": 3.7681159420289854,
+      "method": "two_pass"
+    },
+    {
+      "label": "edge torch.float16",
+      "shape": [
+        9,
+        514
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.1234990581870079,
+      "max_error": 0.330078125,
+      "mse": 0.020593641325831413,
+      "independent_q_mismatches": 0,
+      "compression": 3.9386973180076628,
+      "method": "two_pass"
+    },
+    {
+      "label": "edge torch.bfloat16",
+      "shape": [
+        9,
+        514
+      ],
+      "dtype": "torch.bfloat16",
+      "mismatches": 0,
+      "mae": 0.11445210129022598,
+      "max_error": 0.265625,
+      "mse": 0.01767926849424839,
+      "independent_q_mismatches": 9,
+      "compression": 3.9386973180076628,
+      "method": "two_pass"
+    },
+    {
+      "label": "edge torch.float16",
+      "shape": [
+        4,
+        2048
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.12406213581562042,
+      "max_error": 0.26904296875,
+      "mse": 0.020626865327358246,
+      "independent_q_mismatches": 2,
+      "compression": 3.9844357976653697,
+      "method": "two_pass"
+    },
+    {
+      "label": "edge torch.bfloat16",
+      "shape": [
+        4,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "mismatches": 0,
+      "mae": 0.14345067739486694,
+      "max_error": 0.30133938789367676,
+      "mse": 0.027508221566677094,
+      "independent_q_mismatches": 2,
+      "compression": 3.9844357976653697,
+      "method": "two_pass"
+    },
+    {
+      "label": "subnormal/outlier",
+      "shape": [
+        2,
+        6
+      ],
+      "dtype": "torch.float16",
+      "mismatches": 0,
+      "mae": 0.012500137090682983,
+      "max_error": 0.04998779296875,
+      "mse": 0.00045830028830096126,
+      "independent_q_mismatches": 0,
+      "compression": 1.7142857142857142,
+      "method": "two_pass"
+    }
+  ],
+  "benchmarks": [
+    {
+      "shape": [
+        2048,
+        2048
+      ],
+      "two_pass": {
+        "median_ms": 0.09215,
+        "samples_ms": [
+          0.13988,
+          0.11993,
+          0.09215,
+          0.092,
+          0.09187
+        ]
+      },
+      "fused": {
+        "median_ms": 0.09744,
+        "samples_ms": [
+          0.09744,
+          0.09758,
+          0.09748,
+          0.09744,
+          0.0974
+        ]
+      },
+      "speedup_fused_vs_two_pass": 0.9457
+    },
+    {
+      "shape": [
+        8192,
+        2048
+      ],
+      "two_pass": {
+        "median_ms": 0.33342,
+        "samples_ms": [
+          0.33463,
+          0.33441,
+          0.33342,
+          0.33267,
+          0.3329
+        ]
+      },
+      "fused": {
+        "median_ms": 0.3796,
+        "samples_ms": [
+          0.38257,
+          0.3796,
+          0.37804,
+          0.38047,
+          0.37676
+        ]
+      },
+      "speedup_fused_vs_two_pass": 0.8783
+    },
+    {
+      "shape": [
+        8192,
+        8192
+      ],
+      "two_pass": {
+        "median_ms": 1.37654,
+        "samples_ms": [
+          1.37196,
+          1.36717,
+          1.38127,
+          1.37654,
+          1.37721
+        ]
+      },
+      "fused": {
+        "median_ms": 2.49448,
+        "samples_ms": [
+          2.49448,
+          2.49772,
+          2.49298,
+          2.49331,
+          2.49544
+        ]
+      },
+      "speedup_fused_vs_two_pass": 0.5518
+    }
+  ],
+  "format": {
+    "packed_dtype": "torch.int8",
+    "packed_shape": "[out_features, in_features // 2]",
+    "pack_axis": "in_features",
+    "low_nibble": "weight[2*j]",
+    "high_nibble": "weight[2*j+1]",
+    "int4": "signed two's complement, used values [-7, 7]",
+    "scales_dtype": "torch.float32",
+    "scales_shape": "[out_features]",
+    "quantization": "symmetric per-row; scale = row_absmax/7 (or 1 for zero row)",
+    "zero_point": 0,
+    "methods": [
+      "two_pass",
+      "fused"
+    ],
+    "input_precondition": "finite CUDA FP16/BF16, 2D, even in_features",
+    "dequantization": "weight_hat[row, k] = signed_int4 * scales[row]"
+  }
+}
